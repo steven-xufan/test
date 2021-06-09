@@ -3,6 +3,7 @@ name: Example Workflow
 on: [pull_request]
 
 jobs:
+  runs-on: ubuntu-latest
   check-base-branch:
     steps:
       - uses: a-b-r-o-w-n/check-base-branch-action@v1.1
