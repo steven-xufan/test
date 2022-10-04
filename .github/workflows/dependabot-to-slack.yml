@@ -1,0 +1,20 @@
+name: 'Check for Vulnerabilities'
+
+on: workflow_dispatch
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@v1
+        with:
+          application_id: 244017
+          application_private_key: ${{ secrets.APP_SECRET_KEY }}
+
+      - uses: kunalnagarco/action-cve@v1.7.13
+        with:
+          token: ${{ steps.get_workflow_token.outputs.token }}
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          count: 10
