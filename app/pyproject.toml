@@ -6,7 +6,7 @@ authors = ["Steven Xu Fan <67865954+steven-xufan@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-numpy = "1.21.0"
+numpy = "1.22.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
